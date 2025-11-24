@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificat - testprojet8</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        .header h1 { font-size: 1.8em; margin-bottom: 5px; }
+        .header p { opacity: 0.9; font-size: 0.9em; }
+        .content { padding: 20px; }
+        .thumbnail {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .thumbnail img {
+            max-width: 200px;
+            border: 3px solid #667eea;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .info-box {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 4px solid #667eea;
+        }
+        .info-label {
+            font-weight: bold;
+            color: #4a5568;
+            font-size: 0.85em;
+            margin-bottom: 5px;
+        }
+        .info-value {
+            color: #2d3748;
+            font-size: 1.1em;
+        }
+        .hash {
+            font-family: monospace;
+            background: #2d3748;
+            color: #48bb78;
+            padding: 10px;
+            border-radius: 8px;
+            word-break: break-all;
+            font-size: 0.7em;
+            line-height: 1.4;
+            margin: 10px 0;
+        }
+        .verify-btn {
+            display: block;
+            width: 100%;
+            background: #48bb78;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 20px 0;
+            text-decoration: none;
+            text-align: center;
+        }
+        .verify-btn:hover {
+            background: #38a169;
+        }
+        .badge {
+            display: inline-block;
+            background: #48bb78;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .steps {
+            background: #e6fffa;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .steps h3 {
+            color: #38b2ac;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        .steps ol {
+            margin-left: 20px;
+            line-height: 1.6;
+            font-size: 0.9em;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #f7fafc;
+            color: #718096;
+            font-size: 0.85em;
+        }
+        @media (max-width: 600px) {
+            .container { border-radius: 0; }
+            body { padding: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔐 Certificat Blockchain</h1>
+            <p>Authentification cryptographique</p>
+        </div>
+        
+        <div class="content">
+            <div class="info-box">
+                <div class="info-label">Œuvre</div>
+                <div class="info-value">tableau8</div>
+            </div>
+            
+            <div class="info-box">
+                <div class="info-label">Artiste</div>
+                <div class="info-value">tech8</div>
+            </div>
+            
+            <div class="info-box">
+                <div class="info-label">Certifié le</div>
+                <div class="info-value">2025-11-23</div>
+            </div>
+            
+            <div class='thumbnail'><div class='info-label'>Aperçu Certifié</div><img src='data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAoHBwgHBgoICAgLCgoLDhgQDg0NDh0VFhEYIx8lJCIfIiEmKzcvJik0KSEiMEExNDk7Pj4+JS5ESUM8SDc9Pjv/2wBDAQoLCw4NDhwQEBw7KCIoOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozv/wAARCAAvAMgDASIAAhEBAxEB/8QAGgABAQADAQEAAAAAAAAAAAAAAwQAAQIFBv/EACIQAAICAgEFAQEBAAAAAAAAAAABAiEDMRESIkFhcZFRMv/EABgBAQEBAQEAAAAAAAAAAAAAAAEAAgME/8QAFhEBAQEAAAAAAAAAAAAAAAAAAAER/9oADAMBAAIRAxEAPwDxIvvtP9K8L9P9JI/7/CvEe9zi/DL7+lmNv+P9IcTa/pXibt2JVwk+XsRzd70DGTtHXVxzzzok6lJvmnoLJLdM7ct7Dm1e9CB9VumNjdOmB1LqY+JrgQZ8cOmHN8c8pic7sObXd9KkGRq6ZJlaumV5GrI80lZlIc3HL2Rt9z2V5pWyRtdRklxP0x5PtWyfG0K3SEByv6STb9lWRokmzNKfJz7Jpt+yjITzMkUmwmxJBsk14MM8GCH0kX3/AIV4mRL/AH+FeJmxHoYn7KsdeURYmV436Eqo+WdqW/gUfNCcq/hJkpWw8ktnUpW68BZGrEOE31MpxSJOe50NjkroYFPVQcpOzTkHKW6Klzlb4ZHmlsoySV0RZpbozUlzPZG33MozPZK33MyT42LJ9qJ4OxW6QgWRk02PP4TTM0hmyeY8/gEwIpBs7kcME14MM8GCHvKXeU4pnnqT6tlOKTNKPUwyRZjl9PMxT9lmKd7NanowkvJ25KyWE92d9e78EiSa5e9BZHvZqU7dg5J27IN9V+Rscqdsk6ny7GxyaTFKeqnbDnPdnLk/6HJuypc5J7JMstjzeyTN5MpNllslb7mNl5sn5fUzKNCQjlSAjydtvhCmpyJ5sWTfAEuQQpMKTEkFICOQbEYbBNLRhngwQ//Z' alt='Aperçu' /><div class='badge'>✓ Authentique</div></div>
+            
+            <div class="info-box">
+                <div class="info-label">Hash Blockchain (SHA-3-512)</div>
+                <div class="hash">fdb96d0f045ca2c474b445c46b79edfd11c162ef12717797236020573b245709ec70e1c7d6b01ed6690fd45051d932bd7aa29813a301830f511cfb6480af1222</div>
+            </div>
+            
+            <a href="https://opentimestamps.org" target="_blank" class="verify-btn">
+                ✅ Vérifier sur Blockchain
+            </a>
+            
+            <div class="steps">
+                <h3>🔍 Comment vérifier ?</h3>
+                <ol>
+                    <li>Téléchargez le fichier <strong>.ots</strong> associé</li>
+                    <li>Allez sur <a href="https://opentimestamps.org" target="_blank" style="color: #667eea;">opentimestamps.org</a></li>
+                    <li>Déposez le fichier .ots sur le site</li>
+                    <li>La date de certification apparaît ✓</li>
+                </ol>
+            </div>
+            
+            <div class="info-box" style="background: #fff5f5; border-left-color: #fc8181;">
+                <div class="info-label" style="color: #c53030;">⚠️ Important</div>
+                <p style="font-size: 0.9em; color: #2d3748; margin-top: 5px;">
+                    Ce certificat prouve que ce scan existait à la date indiquée et n'a jamais été modifié. 
+                    La preuve est inscrite dans la blockchain Bitcoin (immuable).
+                </p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>🛡️ Scan haute résolution protégé par chiffrement AES-256</p>
+            <p>ID: testprojet8</p>
+        </div>
+    </div>
+</body>
+</html>
